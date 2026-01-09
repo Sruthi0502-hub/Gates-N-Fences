@@ -3,60 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gates N Fences | Custom Gate Installation Miami</title>
+    <title>Gates N Fences | Optimized Conversion</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="container">
-            <div class="logo">GATES N <span>FENCES</span></div>
-            <a href="#quote" class="btn-nav">Free Quote</a>
+        <div class="container nav-flex">
+            <div class="logo-wrapper">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="30" width="80" height="10" fill="#002e5d"/>
+                    <rect x="20" y="40" width="10" height="40" fill="#d4af37"/>
+                    <rect x="45" y="40" width="10" height="40" fill="#002e5d"/>
+                    <rect x="70" y="40" width="10" height="40" fill="#d4af37"/>
+                </svg>
+                <div class="logo-text">GATES N <span>FENCES</span></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#office">Office</a></li>
+                <li><a href="#quote" class="cta-nav">Free Estimate</a></li>
+            </ul>
         </div>
     </nav>
 
     <header class="hero">
         <div class="container">
-            <h1>Secure Your Home with Custom Luxury Gates</h1>
-            <p>Manufacturer of Aluminum & Wrought Iron Gates since 1985. Designed for durability, built for security.</p>
-            <a href="#quote" class="btn-primary">Get My Free Estimate</a>
+            <h1>Crafting Security. <br>Defining Elegance.</h1>
+            <p>Miami's leader in custom gate and fencing solutions for over 35 years.</p>
+            <a href="#services" class="btn-primary">Explore Our Work</a>
         </div>
     </header>
 
-    <section class="gallery">
+    <section id="services" class="services-section">
         <div class="container">
-            <h2 class="section-title">Our Recent Installations</h2>
-            <div class="image-grid">
-                <div class="img-card"><img src="https://elkgrovefencecompany.com/wp-content/uploads/2020/02/Aluminum_Fence_Burbank_CA.jpg" alt="Aluminum Fence"></div>
-                <div class="img-card"><img src="https://i.pinimg.com/originals/ff/42/69/ff42692c76220b38db14bda362e94ea2.png" alt="Modern Gate Design"></div>
-                <div class="img-card"><img src="https://www.allsouthernfencing.com.au/thumbnaillarge/VerticalSlatFrontFenceSwingGates.jpg" alt="Swing Gates"></div>
-                <div class="img-card"><img src="https://www.wanakafencing.co.nz/wp-content/uploads/2019/09/Metal-Framing-for-Gates.jpg" alt="Metal Framing"></div>
+            <h2 class="section-title">Our Specialized Services</h2>
+            <div class="services-grid">
+                <article class="service-card" onclick="explore('driveway')">
+                    <img src="https://com-tristategate-www.s3.amazonaws.com/uploads/photo/photo/73/classic-white-wood-ranch-driveway-gate-tri-state-gate.jpg" alt="Driveway">
+                    <div class="card-overlay"><h3>Driveway Gates</h3></div>
+                </article>
+                <article class="service-card" onclick="explore('fencing')">
+                    <img src="https://cdn.gorilladash.com/images/media/5968724/citywide-macedon-group-blade-fence-rectangle-62ec55b52a74e.jpg" alt="Fencing">
+                    <div class="card-overlay"><h3>Aluminium Fencing</h3></div>
+                </article>
+                <article class="service-card" onclick="explore('automation')">
+                    <img src="https://images.squarespace-cdn.com/content/v1/6200b473ca1cc23454ae95cb/bac4a756-fe01-43a3-8290-3b835335010e/GATE+AUTOMATION+NSW_-16.jpg" alt="Automation">
+                    <div class="card-overlay"><h3>Gate Automation</h3></div>
+                </article>
+            </div>
+
+            <div id="explorer-box" class="explorer-box">
+                <h2 id="exp-title"></h2>
+                <p id="exp-desc"></p>
+                <div id="exp-gallery" class="gallery-grid"></div>
             </div>
         </div>
     </section>
 
-    <section id="quote" class="contact-section">
-        <div class="container">
-            <div class="form-container">
-                <h2>Request a Free Quote</h2>
+    <section id="office" class="contact-area">
+        <div class="container contact-grid">
+            <div class="office-info">
+                <h2>Contact Our Office</h2>
+                <div class="info-card">
+                    <p><strong>📍 Location:</strong> 3708 N.W. 82nd Street, Miami, FL</p>
+                    <p><strong>📞 Phone:</strong> 305-696-0419</p>
+                    <p><strong>✉️ Email:</strong> LAOrnamental@aol.com</p>
+                </div>
+            </div>
+
+            <div id="quote" class="form-wrapper">
+                <h3>Request an Estimate</h3>
                 <form action="/submit-quote" method="POST">
                     <input type="text" name="name" placeholder="Full Name" required>
                     <input type="email" name="email" placeholder="Email Address" required>
-                    <select name="service">
-                        <option value="driveway-gate">Driveway Gate</option>
-                        <option value="fence">Aluminum Fencing</option>
-                        <option value="automation">Gate Automation</option>
+                    <select name="service" id="form-select" required>
+                        <option value="Driveway Gates">Driveway Gates</option>
+                        <option value="Aluminium Fencing">Aluminium Fencing</option>
+                        <option value="Gate Automation">Gate Automation</option>
                     </select>
-                    <textarea name="message" placeholder="Tell us about your project..." required></textarea>
-                    <button type="submit" class="btn-submit">Send Request</button>
+                    <textarea name="message" placeholder="Project details..." required></textarea>
+                    <button type="submit" class="btn-submit">Submit Request</button>
                 </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 L.A. Ornamental & Rack Corp | Miami, Florida</p>
+        <p>&copy; 2026 L.A. Ornamental & Rack Corp.</p>
     </footer>
+
+    <script>
+        const content = {
+            driveway: {
+                title: "Driveway Gate Solutions",
+                desc: "Handcrafted wood and aluminum gates designed for high-security estate entry.",
+                imgs: ["https://com-tristategate-www.s3.amazonaws.com/uploads/photo/photo/73/classic-white-wood-ranch-driveway-gate-tri-state-gate.jpg", "https://www.gatesnfences.com/images/Evolution_driveway_gates.jpg", "https://com-tristategate-www.s3.amazonaws.com/uploads/photo/photo/136/custom-cedar-wooden-driveway-automated-gate.jpg"]
+            },
+            fencing: {
+                title: "Aluminium Fencing",
+                desc: "Rust-proof, durable fencing available in modern slat and blade designs.",
+                imgs: ["https://cdn.gorilladash.com/images/media/5968724/citywide-macedon-group-blade-fence-rectangle-62ec55b52a74e.jpg", "https://www.stratco.co.nz/globalassets/catalog/gallery/fencing-fences-fence-ezi-slat-25.jpg", "https://roswellfencecompany.com/wp-content/uploads/2019/08/Aluminum-fence-2.jpeg"]
+            },
+            automation: {
+                title: "Gate Automation",
+                desc: "High-tech operator systems with smartphone integration and safety sensors.",
+                imgs: ["https://images.squarespace-cdn.com/content/v1/6200b473ca1cc23454ae95cb/bac4a756-fe01-43a3-8290-3b835335010e/GATE+AUTOMATION+NSW_-16.jpg", "https://smartgates.co.nz/wp-content/uploads/2019/10/automatic-gates-1.jpg", "https://countryside-automation.co.uk/wp-content/uploads/2018/12/4.-IMG_0987.jpg"]
+            }
+        };
+
+        function explore(key) {
+            const explorer = document.getElementById('explorer-box');
+            explorer.style.display = 'block';
+            document.getElementById('exp-title').innerText = content[key].title;
+            document.getElementById('exp-desc').innerText = content[key].desc;
+            document.getElementById('form-select').value = content[key].title;
+            document.getElementById('exp-gallery').innerHTML = content[key].imgs.map(src => `<img src="${src}">`).join('');
+            explorer.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
