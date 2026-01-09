@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gates N Fences | Premium Security</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy: #002e5d; --gold: #d4af37; --white: #fff; }
+        body { font-family: 'Open Sans', sans-serif; margin: 0; color: #333; scroll-behavior: smooth; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* NAVBAR & LOGO */
+        .navbar { background: var(--white); padding: 15px 0; border-bottom: 3px solid var(--navy); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo-wrapper { display: flex; align-items: center; gap: 10px; }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--navy); }
+        .logo-text span { color: var(--gold); }
+        .nav-links { display: flex; list-style: none; gap: 20px; align-items: center; margin: 0; padding: 0; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-weight: 600; }
+        .cta-nav { background: var(--gold); color: white !important; padding: 8px 15px; border-radius: 5px; }
+
+        /* HERO */
+        .hero { background: var(--navy); color: white; padding: 100px 0; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+        .btn-primary { display: inline-block; margin-top: 20px; background: var(--gold); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: transform 0.3s; }
+        .btn-primary:hover { transform: scale(1.05); }
+
+        /* SERVICES */
+        .services-section { padding: 60px 0; background: #f9f9f9; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; color: var(--navy); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .service-card { position: relative; border-radius: 10px; overflow: hidden; cursor: pointer; height: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-card img { width: 100%; height: 100%; object-fit: cover; }
+        .card-overlay { position: absolute; bottom: 0; width: 100%; background: linear-gradient(transparent, rgba(0,46,93,0.9)); color: white; padding: 15px; }
+
+        /* EXPLORER & GALLERY */
+        .explorer-box { display: none; margin-top: 30px; padding: 30px; background: white; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 20px; }
+        .gallery-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 5px; }
+
+        /* CONTACT AREA */
+        .contact-area { padding: 60px 0; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .info-card { background: var(--navy); color: white; padding: 25px; border-radius: 10px; margin-top: 15px; }
+        .form-wrapper { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; font-family: 'Open Sans', sans-serif; }
+        .btn-submit { background: var(--navy); color: white; border: none; padding: 15px; width: 100%; font-weight: bold; cursor: pointer; border-radius: 5px; transition: background 0.3s; }
+        .btn-submit:hover { background: #001f3f; }
+
+        /* SUCCESS PAGE */
+        .success-page { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #f4f7f6; z-index: 2000; }
+        .success-content { font-family: sans-serif; text-align: center; padding: 100px 20px; }
+        .success-box { background: white; padding: 50px; display: inline-block; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 600px; }
+        .success-box h1 { color: #002e5d; margin-bottom: 20px; }
+        .success-box p { font-size: 1.1rem; margin-bottom: 10px; }
+        .btn-return { display: inline-block; margin-top: 20px; padding: 12px 30px; background: #d4af37; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; cursor: pointer; border: none; }
+
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .nav-links { font-size: 0.9rem; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <div class="logo-wrapper">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="30" width="80" height="10" fill="#002e5d"/>
+                    <rect x="20" y="40" width="10" height="40" fill="#d4af37"/>
+                    <rect x="45" y="40" width="10" height="40" fill="#002e5d"/>
+                    <rect x="70" y="40" width="10" height="40" fill="#d4af37"/>
+                </svg>
+                <div class="logo-text">GATES N <span>FENCES</span></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#office">Office</a></li>
+                <li><a href="#quote" class="cta-nav">Free Estimate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Crafting Security. <br>Defining Elegance.</h1>
+            <p>Miami's leader in custom gate solutions for over 35 years.</p>
+            <a href="#services" class="btn-primary">Explore Our Work</a>
+        </div>
+    </header>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Our Specialized Services</h2>
+            <div class="services-grid">
+                <article class="service-card" onclick="explore('driveway')">
+                    <img src="https://com-tristategate-www.s3.amazonaws.com/uploads/photo/photo/73/classic-white-wood-ranch-driveway-gate-tri-state-gate.jpg" alt="Driveway">
+                    <div class="card-overlay"><h3>Driveway Gates</h3></div>
+                </article>
+                <article class="service-card" onclick="explore('fencing')">
+                    <img src="https://cdn.gorilladash.com/images/media/5968724/citywide-macedon-group-blade-fence-rectangle-62ec55b52a74e.jpg" alt="Fencing">
+                    <div class="card-overlay"><h3>Aluminium Fencing</h3></div>
+                </article>
+                <article class="service-card" onclick="explore('automation')">
+                    <img src="https://images.squarespace-cdn.com/content/v1/6200b473ca1cc23454ae95cb/bac4a756-fe01-43a3-8290-3b835335010e/GATE+AUTOMATION+NSW_-16.jpg" alt="Automation">
+                    <div class="card-overlay"><h3>Gate Automation</h3></div>
+                </article>
+            </div>
+
+            <div id="explorer-box" class="explorer-box">
+                <h2 id="exp-title"></h2>
+                <p id="exp-desc"></p>
+                <div id="exp-gallery" class="gallery-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="office" class="contact-area">
+        <div class="container contact-grid">
+            <div class="office-info">
+                <h2>Contact Our Office</h2>
+                <div class="info-card">
+                    <p><strong>📍 Location:</strong> 3708 N.W. 82nd Street, Miami, FL</p>
+                    <p><strong>📞 Phone:</strong> 305-696-0419</p>
+                    <p><strong>✉️ Email:</strong> LAOrnamental@aol.com</p>
+                </div>
+            </div>
+
+            <div id="quote" class="form-wrapper">
+                <h3>Request an Estimate</h3>
+                <form id="quoteForm">
+                    <input type="text" name="name" id="name" placeholder="Full Name" required>
+                    <input type="email" name="email" id="email" placeholder="Email Address" required>
+                    <select name="service" id="form-select" required>
+                        <option value="Driveway Gates">Driveway Gates</option>
+                        <option value="Aluminium Fencing">Aluminium Fencing</option>
+                        <option value="Gate Automation">Gate Automation</option>
+                    </select>
+                    <textarea name="message" id="message" placeholder="Project details..." rows="4" required></textarea>
+                    <button type="submit" class="btn-submit">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Page -->
+    <div id="successPage" class="success-page">
+        <div class="success-content">
+            <div class="success-box">
+                <h1>Request Submitted!</h1>
+                <p>Thank you, <strong id="successName"></strong>.</p>
+                <p>Your request for <strong id="successService"></strong> has been received.</p>
+                <p style="margin-top: 20px; color: #666;">We'll contact you shortly at <strong id="successEmail"></strong></p>
+                <button class="btn-return" onclick="returnHome()">Return to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const content = {
+            driveway: {
+                title: "Driveway Gate Solutions",
+                desc: "Handcrafted wood and aluminum gates designed for high-security entry.",
+                imgs: ["https://com-tristategate-www.s3.amazonaws.com/uploads/photo/photo/73/classic-white-wood-ranch-driveway-gate-tri-state-gate.jpg", "https://www.gatesnfences.com/images/Evolution_driveway_gates.jpg", "https://com-tristategate-www.s3.amazonaws.com/uploads/photo/photo/136/custom-cedar-wooden-driveway-automated-gate.jpg"]
+            },
+            fencing: {
+                title: "Aluminium Fencing",
+                desc: "Rust-proof fencing available in modern slat and blade designs.",
+                imgs: ["https://cdn.gorilladash.com/images/media/5968724/citywide-macedon-group-blade-fence-rectangle-62ec55b52a74e.jpg", "https://www.stratco.co.nz/globalassets/catalog/gallery/fencing-fences-fence-ezi-slat-25.jpg", "https://roswellfencecompany.com/wp-content/uploads/2019/08/Aluminum-fence-2.jpeg"]
+            },
+            automation: {
+                title: "Gate Automation",
+                desc: "High-tech operator systems with smartphone integration.",
+                imgs: ["https://images.squarespace-cdn.com/content/v1/6200b473ca1cc23454ae95cb/bac4a756-fe01-43a3-8290-3b835335010e/GATE+AUTOMATION+NSW_-16.jpg", "https://smartgates.co.nz/wp-content/uploads/2019/10/automatic-gates-1.jpg", "https://countryside-automation.co.uk/wp-content/uploads/2018/12/4.-IMG_0987.jpg"]
+            }
+        };
+
+        function explore(key) {
+            const explorer = document.getElementById('explorer-box');
+            explorer.style.display = 'block';
+            document.getElementById('exp-title').innerText = content[key].title;
+            document.getElementById('exp-desc').innerText = content[key].desc;
+            document.getElementById('form-select').value = content[key].title;
+            document.getElementById('exp-gallery').innerHTML = content[key].imgs.map(src => `<img src="${src}" alt="Gallery image">`).join('');
+            explorer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form submission handler
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('form-select').value;
+            const message = document.getElementById('message').value;
+            
+            // Log to console (for demonstration)
+            console.log('--- New Lead Captured ---');
+            console.log(`Name: ${name} | Service: ${service}`);
+            console.log(`Email: ${email}`);
+            console.log(`Message: ${message}`);
+            
+            // Update success page with user data
+            document.getElementById('successName').textContent = name;
+            document.getElementById('successService').textContent = service;
+            document.getElementById('successEmail').textContent = email;
+            
+            // Show success page
+            document.getElementById('successPage').style.display = 'block';
+            
+            // Reset form
+            document.getElementById('quoteForm').reset();
+        });
+
+        function returnHome() {
+            document.getElementById('successPage').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
